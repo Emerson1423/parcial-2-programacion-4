@@ -12,6 +12,6 @@ class rolesModel extends Model
 
     public function usuarios()
     {
-        return $this->hasMany(usuariosModel::class);
+        return $this->hasMany(usuariosModel::class, 'rolid');
     }
 }

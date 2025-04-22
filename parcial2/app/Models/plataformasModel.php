@@ -12,6 +12,6 @@ class plataformasModel extends Model
 
     public function juegos()
     {
-        return $this->hasMany(juegosModel::class);
+        return $this->hasMany(juegosModel::class, 'plataformaid');
     }
 }

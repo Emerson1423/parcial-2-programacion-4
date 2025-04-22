@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('precio');
             $table->integer('cantidad_disponible');
             $table->foreignId('plataformaid')->constrained('tblplataformas')->onDelete('cascade');
-            $table->foreignId('generoid')->constrained('tbl_generos')->onDelete('cascade');
-            $table->foreignId('proveedorid')->constrained('tbl_proveedor')->onDelete('cascade');
+            $table->foreignId('generoid')->constrained('tbl_categorias')->onDelete('cascade');
+            $table->foreignId('proveedorid')->constrained('tbl_proveedores')->onDelete('cascade');
 
 
 

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class ordenesModel extends Model
 {
     protected $fillable = [
-        
         'usuarioid',
         'total',
         'fecha_orden',
@@ -16,6 +16,10 @@ class ordenesModel extends Model
 
     public function usuario()
     {
-        return $this->belongsTo(usuariosModel::class);
+        return $this->belongsTo(usuariosModel::class, 'usuarioid');
 }
+
+    public function pedidos(){
+        return $this->hasMany(pedidosModel::class, 'ordenid');
+    }
 }

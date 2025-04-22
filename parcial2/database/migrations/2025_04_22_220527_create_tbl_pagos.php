@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tbl_categorias', function (Blueprint $table) {
-            $table->id('categoriaid');
-            $table->string('nombreCategoria', 50)->unique();
+        Schema::create('tbl_pagos', function (Blueprint $table) {
+            $table->id('pagoid');
+            $table->string('nombre',50);
+            $table->string('apellido',50);
+            $table->integer('numTarjeta');
+            $table->integer('cvv');
+            $table->date('fechaExp');
             $table->timestamps();
         });
     }
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tbl_categorias');
+        Schema::dropIfExists('tbl_pagos');
     }
 };

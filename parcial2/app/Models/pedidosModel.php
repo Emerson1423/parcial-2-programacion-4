@@ -16,6 +16,18 @@ class pedidosModel extends Model
 
     public function ordenes()
     {
-        return $this->belongsTo(ordenesModel::class);
+        return $this->belongsTo(ordenesModel::class, 'ordenid');
     }
+
+    public function juegos()
+    {
+        return $this->belongsTo(juegosModel::class, 'juegoid');
+    }
+
+    public function pagos(){
+        return $this->belongsTo(pagosModel::class, 'pagoid');
+    }
+
+    
+        
 }
